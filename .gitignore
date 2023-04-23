@@ -5,3 +5,4 @@ __pycache__/
 data/*/input.txt
 data/*/*.pkl
 *.bin
+out-*/
