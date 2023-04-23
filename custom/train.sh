@@ -1,5 +1,5 @@
 #!/bin/sh
-$ python train.py config/train_shakespeare_char.py \
+python train.py config/train_shakespeare_char.py \
   --device=cpu \
   --compile=False \
   --eval_iters=20 \
