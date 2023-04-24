@@ -31,3 +31,7 @@ now, i want to see how it performs following the quick start guide.
   > the `--out_dir` argument in `sample.py` is confusing: it just loads the checkpoint file but has nothing to output
   > both output text look the same, i wonder why
   - [ ] look into `sample.py` to find out
+
+# fine tuning
+- [ ] see what [it](/README.md) says about it
+- [ ] try to `〄 fine tune` the model
