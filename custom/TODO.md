@@ -4,7 +4,7 @@ now, i want to see how it performs following the quick start guide.
 
 # follow the quick start guide
 
-- [x] run `$ python data/shakespeare_char/prepare.py`
+- [x] run `python data/shakespeare_char/prepare.py`
   > the script separates the data into `train` set for training and `val` set for validation
   [x] i have to add dataset related files to `.gitignore` because it's disturbing to track them
 - [x] now the data has been prepared, i need to run the training using train.sh
@@ -34,6 +34,11 @@ now, i want to see how it performs following the quick start guide.
 
 # fine tuning
 - [ ] see what [it](/README.md) says about it
-- [ ] try to `〄 fine tune` the model
-  - [ ] take a look at [the script](/config/finetune_shakespeare.py)
-  - [ ] run `python train.py config/finetune_shakespeare.py`
+- [*] try to `〄 fine tune` the model
+  - [x] take a look at [the script](/config/finetune_shakespeare.py)
+  - [x] run `python data/shakespeare/prepare.py`
+  - [x] run `sh custom/train.sh config/finetune_shakespeare.py`
+    > checkout the [log](/log/0.md)
+  - [ ] study the log
+    > i wonder why it tried to download `pytorch_model.bin` which weights 6.43G
+    according to https://huggingface.co/transformers/v1.2.0/serialization.html it's a the model weights file.

@@ -1,6 +1,5 @@
 #!/bin/sh
-echo "target: $2"
-python train.py $2 \
+python train.py $1 \
   --device=cpu \
   --compile=False \
   --eval_iters=20 \
