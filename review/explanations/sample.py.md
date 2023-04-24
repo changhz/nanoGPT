@@ -2,7 +2,7 @@
 
 what does the code do
 
-This code samples text from a trained GPT (Generative Pre-trained Transformer) model. The user can specify the path to a pre-trained model checkpoint or a GPT-2 variant, as well as the output directory for saving checkpoints during training. The user can also specify a starting prompt, the number of samples to generate, the maximum number of tokens to generate in each sample, and various generation parameters such as temperature and top-k sampling. The code loads the model, generates the requested number of samples of text, and prints them to the console.
+This code *samples text from a trained GPT model*. The user can specify the path to a pre-trained model checkpoint or a GPT-2 variant, as well as the output directory for saving checkpoints during training. The user can also specify a starting prompt, the number of samples to generate, the maximum number of tokens to generate in each sample, and various generation parameters such as temperature and top-k sampling. The code loads the model, generates the requested number of samples of text, and prints them to the console.
 
 where does it load the model
 
@@ -32,9 +32,7 @@ if compile:
     model = torch.compile(model) # requires PyTorch 2.0 (optional)
 ```
 
-If `init_from` is set to 'resume', the code loads the model checkpoint from the directory specified in `out_dir`. If `init_from` starts with 'gpt2', the
-
-code loads a GPT-2 variant from the Hugging Face Transformers library. If the model is loaded from a checkpoint, it first loads the configuration for the model (`GPTConfig`) and uses it to initialize a new `GPT` model. It then loads the saved state dictionary from the checkpoint, and removes any unwanted prefixes from the keys (this is because the checkpoint keys may have a different prefix than the model keys). Finally, it sets the model in **evaluation mode**, moves the model to the specified device (GPU or CPU), and *optionally compiles the model* using PyTorch 2.0.
+If `init_from` is set to 'resume', the code loads the model checkpoint from the directory specified in `out_dir`. If `init_from` starts with 'gpt2', the code loads a GPT-2 variant from the Hugging Face Transformers library. If the model is loaded from a checkpoint, it first loads the configuration for the model (`GPTConfig`) and uses it to initialize a new `GPT` model. It then loads the saved state dictionary from the checkpoint, and removes any unwanted prefixes from the keys (this is because the checkpoint keys may have a different prefix than the model keys). Finally, it sets the model in **evaluation mode**, moves the model to the specified device (GPU or CPU), and *optionally compiles the model* using PyTorch 2.0.
 
 what's the effect of compiling the model using PyTorch 2.0
 

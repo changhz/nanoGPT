@@ -4,6 +4,8 @@
 
 - [training script](/train.py)
 - [model](/train.py)
+- [sampling](/sample.py)
+  the process of generating new data points from a probability distribution
 
 ## Data
 
