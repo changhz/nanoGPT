@@ -2,7 +2,7 @@ since i only have a crappy laptop, i have installed the cutting edge Pytorch Nig
 
 now, i want to see how it performs following the quick start guide.
 
-# TODO: follow the quick start guide
+# follow the quick start guide
 
 - [x] run `$ python data/shakespeare_char/prepare.py`
   > the script separates the data into `train` set for training and `val` set for validation
@@ -26,3 +26,8 @@ now, i want to see how it performs following the quick start guide.
   > after running sample.py, some gibberish is generated
   > i wonder how i should use the val.bin (maybe it has nothing to do here)
     the val.bin is only used [here](/train.py)
+- [*] now i want to run the `sample.py` multiple times to see if it makes any difference
+  > i save the result in [here](/out-dump/0.txt) and [here](/out-dump/1.txt)
+  > the `--out_dir` argument in `sample.py` is confusing: it just loads the checkpoint file but has nothing to output
+  > both output text look the same, i wonder why
+  - [ ] look into `sample.py` to find out
