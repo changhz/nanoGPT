@@ -35,3 +35,5 @@ now, i want to see how it performs following the quick start guide.
 # fine tuning
 - [ ] see what [it](/README.md) says about it
 - [ ] try to `〄 fine tune` the model
+  - [ ] take a look at [the script](/config/finetune_shakespeare.py)
+  - [ ] run `python train.py config/finetune_shakespeare.py`

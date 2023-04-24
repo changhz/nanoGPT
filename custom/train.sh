@@ -1,5 +1,6 @@
 #!/bin/sh
-python train.py config/train_shakespeare_char.py \
+echo "target: $2"
+python train.py $2 \
   --device=cpu \
   --compile=False \
   --eval_iters=20 \
