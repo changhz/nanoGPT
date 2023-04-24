@@ -32,8 +32,8 @@ now, i want to see how it performs following the quick start guide.
   > both output text look the same, i wonder why
   - [ ] look into `sample.py` to find out
 
-# fine tuning
-- [ ] see what [it](/README.md) says about it
+# finetuning
+- [x] see what [it](/README.md) says about it
 - [*] try to `〄 fine tune` the model
   - [x] take a look at [the script](/config/finetune_shakespeare.py)
   - [x] run `python data/shakespeare/prepare.py`
@@ -42,3 +42,5 @@ now, i want to see how it performs following the quick start guide.
   - [ ] study the log
     > i wonder why it tried to download `pytorch_model.bin` which weights 6.43G
     according to https://huggingface.co/transformers/v1.2.0/serialization.html it's a the model weights file.
+  i noticed that `train.py` loads the [config](/configurator.py) at line 77
+  - [ ] read `configurator.py`
