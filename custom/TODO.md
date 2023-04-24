@@ -34,13 +34,16 @@ now, i want to see how it performs following the quick start guide.
 
 # finetuning
 - [x] see what [it](/README.md) says about it
-- [*] try to `〄 fine tune` the model
+- [x] try to `〄 fine tune` the model
   - [x] take a look at [the script](/config/finetune_shakespeare.py)
   - [x] run `python data/shakespeare/prepare.py`
   - [x] run `sh custom/train.sh config/finetune_shakespeare.py`
     > checkout the [log](/log/0.md)
-  - [ ] study the log
-    > i wonder why it tried to download `pytorch_model.bin` which weights 6.43G
-    according to https://huggingface.co/transformers/v1.2.0/serialization.html it's a the model weights file.
+  - [x] study the log
+    - i wonder why it tried to download `pytorch_model.bin` which weights 6.43G
+    - according to https://huggingface.co/transformers/v1.2.0/serialization.html it's a the model weights file.
+    - i know what's wrong, i had to set `init_from` to `resume`
   i noticed that `train.py` loads the [config](/configurator.py) at line 77
-  - [ ] read `configurator.py`
+  - [x] read `configurator.py`
+- [*] try again
+  - [x] set `init_from` to `resume`
