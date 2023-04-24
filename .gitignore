@@ -6,3 +6,4 @@ data/*/input.txt
 data/*/*.pkl
 *.bin
 out-*/
+log/
