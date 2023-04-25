@@ -8,8 +8,8 @@ wandb_project = 'shakespeare'
 wandb_run_name = 'ft-' + str(time.time())
 
 dataset = 'shakespeare'
-init_from = 'gpt2'
 '''
+init_from = 'gpt2'
 init_from = 'gpt2-xl' # this is the largest GPT-2 model
 '''
 
