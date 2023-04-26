@@ -27,6 +27,8 @@ import torch
 from torch.nn.parallel import DistributedDataParallel as DDP
 from torch.distributed import init_process_group, destroy_process_group
 
+import tiktoken
+
 from model import GPTConfig, GPT
 
 # -----------------------------------------------------------------------------
@@ -78,6 +80,10 @@ exec(open('configurator.py').read()) # overrides from command line or config fil
 config = {k: globals()[k] for k in config_keys} # will be useful for logging
 # -----------------------------------------------------------------------------
 
+enc = tiktoken.get_encoding("gpt2")
+encode = lambda s: enc.encode(s, allowed_special={"<|endoftext|>"})
+decode = lambda l: enc.decode(l)
+
 # various inits, derived attributes, I/O setup
 ddp = int(os.environ.get('RANK', -1)) != -1 # is this a ddp run?
 if ddp:
@@ -123,6 +129,17 @@ def get_batch(split):
         x, y = x.pin_memory().to(device, non_blocking=True), y.pin_memory().to(device, non_blocking=True)
     else:
         x, y = x.to(device), y.to(device)
+    nex = 0
+    for ex in x:
+        print('')
+        print(f'BATCH {nex}')
+        print('TOKENS:', len(ex))
+        print(f'<X>', decode(ex.tolist()))
+        print(f'<Y>', decode(y[nex].tolist()))
+        print(f'END BATCH {nex}')
+        print('')
+        nex += 1
+
     return x, y
 
 # init these up here, can override if init_from='resume' (i.e. from a checkpoint)
